@@ -20,10 +20,10 @@
   <button type="button" class="btn btn-success" onclick="recordReact()">React Now</button>
   </div>
   <script> 
- var myTime = undefined
+ var myCurrentTime = undefined
     function recordReact() {
-        myTime = Date.now()
-        console.log("==="+myTime)
+      myCurrentTime = Date.now()
+        console.log("==="+myCurrentTime)
     }  
     function startTime() {
             for (let i = 0; i <= 3; i++) {
@@ -33,13 +33,13 @@
                 }, j)
             }
             setTimeout(() => {
-                if (myTime == undefined)
-                    document.getElementById("target").innerHTML = "Running Too Slow";
+                if (myCurrentTime == undefined)
+                    document.getElementById("target").innerHTML = "Too Slow";
                 else {
                     var buttonTime = Date.now();
-                    var diff = buttonTime - myTime;
+                    var differenceTime = buttonTime - myCurrentTime;
 
-                    document.getElementById("target").innerHTML = "Time was " + diff + " ms"
+                    document.getElementById("target").innerHTML = "Time was " + differenceTime + " ms"
                     myTime = undefined
                 }
             }, 3000)
@@ -47,4 +47,4 @@
   </script>
 
 </body>
-</html>
+</html> 
