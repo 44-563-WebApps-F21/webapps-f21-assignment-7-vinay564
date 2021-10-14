@@ -31,17 +31,18 @@ Stack items
 	<div class="container-fluid">
 	<h2>Vinay Manavarthi builds a stack </h2>
 	<input id="inputElement" type="text"><br><br>
-		<div class="flex-container" id="target">
-		  <div>row item 1</div>   
-		  <div>row item 2</div>  
-		  <div>row item 3</div>  
-		</div>
+	<div class="flex-container" id="target">
+        <div class="stack">Game 1</div>
+        <div class="stack">Game 2</div>
+        <div class="stack">Game 3</div>
+    </div>
 	
 	<p> Press the button to create an new element of type div and then add it to the container.
 		</p>
 	<button  class="btn btn-secondary" onclick="makeNewDiv()">Push value</button>
     <button  class="btn btn-secondary" onclick="popItem()">Pop</button>
     <button  class="btn btn-secondary" onclick="zap()">Zap values</button>
+	<button  class="btn btn-secondary" onclick="uniqueBtn()">Unique </button>
 </div>
 </body>
 <script>
@@ -68,6 +69,17 @@ Stack items
                     stackItems[i].remove()
                     console.log(itemToBeRemoved)
                     i--
+                }
+            }
+        }
+    }
+	function uniqueBtn() {
+        var stackItems = document.getElementsByClassName("stack")
+        for (var i = 0; i < stackItems.length; i++) {
+            for (var j = i + 1; j < stackItems.length; j++) {
+                if (stackItems[i].innerHTML == stackItems[j].innerHTML) {
+                    stackItems[j].remove()
+                    j--; i--
                 }
             }
         }

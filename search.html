@@ -14,6 +14,8 @@
 </head>
 
 <body>
+
+  
     <div class="container">
 
         <h1 class="text-center fst-italic">Animal hunt <small id="full"> Vinay Manavarthi </small></h1>
@@ -28,6 +30,8 @@
             <p class="fw-border badge bg-warning text-wrap col-12" style="width: 18rem;" id="distance">Distance is
                 unknown.
             </p>
+            <br>
+            <button class="btn btn-primary" onclick="resetGame()"> Reset </button>
         </div>
         <div class="container row">
             <div class="col-2"><img class="rounded" src="Bonsai_img.jpg" id="image-0" width="160" height="160" onClick="check(0)" ></div>
@@ -101,6 +105,16 @@
         }
     }
     
+    function resetGame() {
+            triesCount = 0
+            animalLocation = Math.floor(Math.random() * 23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for (var i = 0; i < 24; i++) {
+                if (ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "cat.jpg"
+
+            }
+        }
     
     
     
